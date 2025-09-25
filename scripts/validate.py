@@ -5,7 +5,6 @@ REQUIRED_H2 = {"Summary", "How to win", "How to lose", "Table"} TABLE_HEADER = [
 def normalize_header_row(row): return [c.strip().lower() for c in row.strip().strip("|").split("|")]
 
 def check_file(path: pathlib.Path): errs = [] text = path.read_text(encoding="utf-8")
-
 # H2s: must be exactly the required set (order not enforced)
 h2s = set(m.group(2).strip() for m in re.finditer(r"^##\s+(.+)$", text, flags=re.M))
 if h2s != REQUIRED_H2:
@@ -30,7 +29,7 @@ if not table_ok:
     errs.append(f"{path}: Table header must be exactly: | " + " | ".join(TABLE_HEADER) + " |")
 
 return errs
-
 def main(): root = pathlib.Path("docs/keywords") if not root.exists(): print("docs/keywords not found.", file=sys.stderr) return 1 problems = [] for md in root.glob("*.md"): if md.name.startswith("_"): continue problems += check_file(md) if problems: print("\n".join(problems), file=sys.stderr) return 1 print("Validation passed.") return 0
 
 if name == "main": sys.exit(main())
+
