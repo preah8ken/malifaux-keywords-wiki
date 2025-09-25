@@ -11,5 +11,5 @@ Summary
 How to win
 How to lose
 Table (keep the exact header)
-Open a Pull Request
+Open a Pull Request 
 
