@@ -1,0 +1,18 @@
+site_name: Malifaux Keyword Wiki site_url: https://preah8ken.github.io/malifaux-keywords-wiki/ theme: name: material features: - navigation.instant - navigation.sections - toc.integrate custom_dir: docs/overrides palette: - scheme: slate primary: indigo accent: purple extra_css:
+
+stylesheets/extra.css plugins:
+
+search
+
+awesome-pages nav:
+
+Home: index.md
+
+Keywords:
+
+keywords/ markdown_extensions:
+admonition
+
+tables
+
+toc: permalink: true
