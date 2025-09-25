@@ -1,18 +1,31 @@
-site_name: Malifaux Keyword Wiki site_url: https://preah8ken.github.io/malifaux-keywords-wiki/ theme: name: material features: - navigation.instant - navigation.sections - toc.integrate custom_dir: docs/overrides palette: - scheme: slate primary: indigo accent: purple extra_css:
+site_name: Malifaux Keyword Wiki
+site_url: https://preah8ken.github.io/malifaux-keywords-wiki/
 
-stylesheets/extra.css plugins:
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - toc.integrate
+  custom_dir: docs/overrides
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: purple
 
-search
+extra_css:
+  - stylesheets/extra.css
 
-awesome-pages nav:
+plugins:
+  - search
 
-Home: index.md
+nav:
+  - Home: index.md
+  - Keywords:
+      - Example: keywords/example-keyword.md
 
-Keywords:
-
-keywords/ markdown_extensions:
-admonition
-
-tables
-
-toc: permalink: true
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
